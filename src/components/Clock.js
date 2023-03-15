@@ -1,17 +1,16 @@
 import React from 'react';
 
-export class ClockToggle extends React.Component {
-  render () {
+export const ClockToggle = ({toggleClock}) => {
     return (
       <button 
         type="button"
         className="clock-toggle" 
-        onClick={this.props.toggleClock}
+        onClick={toggleClock}
       >
         Toggle Clock
       </button>
     )
-  }
+  
 } 
 
 class Clock extends React.Component {
