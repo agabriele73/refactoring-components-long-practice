@@ -29,15 +29,17 @@ const Headers = ({ titles, currentTab, selectTab }) => {
 }
 
 const Folder = ({folders}) => { 
-  const [ currentTab, setCurrentTab] = useState(folders[0])
+  const [ currentTab, setCurrentTab] = useState(0)
   
   const selectTab = (num) => {
-    setCurrentTab(folders[num]);
+    setCurrentTab(num);
   }
   
 
     const folder = folders[currentTab];
     const titles = folders.map((folder) => folder.title);
+
+
     return (
       <section className="tabs-section">
         <h1>Tabs</h1>
@@ -48,7 +50,7 @@ const Folder = ({folders}) => {
             selectTab={selectTab}
           />
           <div className='tab-content'>
-            {folder}
+            {folder.content}
           </div>
         </div>
       </section>
